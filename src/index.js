@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import { CardList } from "./components/card-list/card-list.component";
+import { SearchBox } from "./components/search-box/search-box.component";
 
 import "./styles.css";
 
@@ -9,8 +10,12 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      monsters: []
+      monsters: [],
+      seachQuery: ""
     };
+
+    // No need to bind functions since arrow functions do that explicitly.
+    // this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -19,10 +24,24 @@ class App extends React.Component {
     );
   }
 
+  handleChange = e => {
+    this.setState({ seachQuery: e.target.value });
+  };
+
   render() {
+    const { monsters, seachQuery } = this.state;
+    const filteredMonsters = monsters.filter(monster =>
+      monster.name.toLowerCase().includes(seachQuery.toLowerCase())
+    );
+
     return (
       <div className="App">
-        <CardList monsters={this.state.monsters} />
+        <h1>Monsters Rodolex</h1>
+        <SearchBox
+          handleChange={this.handleChange}
+          placeholder="Search Monsters..."
+        />
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
