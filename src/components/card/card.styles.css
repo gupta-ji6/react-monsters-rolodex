@@ -1,7 +1,7 @@
 .card-container {
   display: flex;
   flex-direction: column;
-  background-color: #95dada;
+  background-color: #f2aa4cff;
   border: 1px solid grey;
   border-radius: 5px;
   padding: 25px;
@@ -10,6 +10,11 @@
   backface-visibility: hidden;
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
+  font-family: "Bangers", cursive;
+  color: black;
+  letter-spacing: 2px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .card-container:hover {
