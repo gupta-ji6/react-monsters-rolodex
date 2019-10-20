@@ -4,7 +4,7 @@
   "description": "",
   "keywords": ["monsters rolodex"],
   "main": "src/index.js",
-  "homepage": "http://ayushgupta.tech/react-monsters-rolodex",
+  "homepage": "http://gupta-ji6.github.io/react-monsters-rolodex",
   "dependencies": {
     "react": "16.8.6",
     "react-dom": "16.8.6",
